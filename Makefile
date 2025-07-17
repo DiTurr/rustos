@@ -23,7 +23,7 @@ ASM_OBJS:=$(patsubst $(ASM_DIR)/%.S,$(OBJ_DIR)/%.o,$(ASM_FILES))
 ################
 LD:=riscv64-unknown-elf-gcc
 LDFLAGS:=-static -nostdlib
-LDSCRIPT:=src/lds/virt.lds
+LDSCRIPT:=lds/virt.lds
 
 ################
 ## QEMU
@@ -72,7 +72,15 @@ all: asm rust | elf_dir/
 	${LD} ${LDFLAGS} $$OBJS -T ${LDSCRIPT} -o ${ELF_FILE}
 
 run:
-	$(QEMU) -machine $(MACH) -cpu $(CPU) -smp 1 -m $(MEM) -nographic -serial mon:stdio -bios none -kernel $(ELF_FILE)
+	$(QEMU) \
+	-machine $(MACH) \
+	-cpu $(CPU) \
+	-smp 1 \
+	-m $(MEM) \
+	-nographic \
+	-serial mon:stdio \
+	-bios none \
+	-kernel $(ELF_FILE)
 # -d in_asm
 
 ################
