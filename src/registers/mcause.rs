@@ -2,7 +2,8 @@
 //! File       : mcause.rs
 //! Module     : registers::mcause
 //! Author     : DiTurr
-//! Description: Defines the Mcause CSR register abstraction and accessors.
+//! Description:
+//! Defines the Mcause CSR register abstraction and accessors.
 //! ---------------------------------------------------------------------------
 
 use crate::define_csr;

@@ -2,7 +2,8 @@
 //! File       : time.rs
 //! Module     : registers::time
 //! Author     : DiTurr
-//! Description: Defines the time CSR register abstraction and accessors.
+//! Description:
+//! Defines the time CSR register abstraction and accessors.
 //! ---------------------------------------------------------------------------
 
 use crate::define_csr;

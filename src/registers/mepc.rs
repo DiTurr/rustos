@@ -2,7 +2,8 @@
 //! File       : mepc.rs
 //! Module     : registers::mepc
 //! Author     : DiTurr
-//! Description: Defines the mepc CSR register abstraction and accessors.
+//! Description:
+//! Defines the mepc CSR register abstraction and accessors.
 //! ---------------------------------------------------------------------------
 
 use crate::define_csr;
