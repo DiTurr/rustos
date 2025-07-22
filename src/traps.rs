@@ -1,10 +1,8 @@
 //! ---------------------------------------------------------------------------
-//! File       : registers.rs
-//! Module     : registers
+//! File       : traps.rs
+//! Module     : traps
 //! Author     : DiTurr
-//! Description: Control and Status Registers (CSRs) utilities.
+//! Description: Trap handlers and utilities.
 //! ---------------------------------------------------------------------------
-pub mod macros;
-// pub mod mcause;
-pub mod mepc;
-pub mod time;
+pub mod machine_traps;
+pub mod traps;

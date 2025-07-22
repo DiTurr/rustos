@@ -1,10 +1,7 @@
 //! ---------------------------------------------------------------------------
-//! File       : registers.rs
-//! Module     : registers
+//! File       : logger.rs
+//! Module     : logger
 //! Author     : DiTurr
-//! Description: Control and Status Registers (CSRs) utilities.
+//! Description: Logger handlers and utilities.
 //! ---------------------------------------------------------------------------
-pub mod macros;
-// pub mod mcause;
-pub mod mepc;
-pub mod time;
+pub mod logger;

@@ -1,13 +1,17 @@
-# trap.S
-# In the future our trap vector will go here.
+# Disable generation of compressed instructions.
+.option norvc
 
+.section .text
 .global asm_trap_vector
+# This must be aligned by 4 since the last two bits
+# of the mtvec register do not contribute to the address
+# of this vector.
+.align 4
 asm_trap_vector:
-    li a0, 0x10000000       # UART base
-    li a1, '!'
-1:
-    lb t0, 5(a0)            # Check Line Status Register (LSR)
-    andi t0, t0, 0x20       # Bit 5: Transmit Holding Register Empty
-    beqz t0, 1b
-    sb a1, 0(a0)            # Write '!' to UART
-2:  j 2b                    # Loop forever
+	csrr	a0, mepc
+	csrr	a1, mtval
+	csrr	a2, mcause
+	csrr	a3, mhartid
+	csrr	a4, mstatus
+	csrr	a5, mscratch
+	call	machine_trap
